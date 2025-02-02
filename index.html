@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบจัดการคลังสินค้า</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 p-8">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8">ระบบจัดการคลังสินค้า</h1>
+
+    <!-- เพิ่มสินค้า -->
+    <div class="bg-white p-6 rounded-lg shadow mb-8">
+      <h2 class="text-xl font-semibold mb-4">เพิ่มสินค้า</h2>
+      <form id="addProductForm" class="space-y-4">
+        <input type="text" id="productName" placeholder="ชื่อสินค้า" class="w-full p-2 border rounded">
+        <input type="number" id="productPrice" placeholder="ราคา" class="w-full p-2 border rounded">
+        <input type="number" id="productStock" placeholder="จำนวนคงเหลือ" class="w-full p-2 border rounded">
+        <select id="productCategory" class="w-full p-2 border rounded">
+          <option value="electronics">อิเล็กทรอนิกส์</option>
+          <option value="clothing">เสื้อผ้า</option>
+          <option value="food">อาหาร</option>
+        </select>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">เพิ่มสินค้า</button>
+      </form>
+    </div>
+
+    <!-- รายการสินค้า -->
+    <div class="bg-white p-6 rounded-lg shadow mb-8">
+      <h2 class="text-xl font-semibold mb-4">รายการสินค้า</h2>
+     <!-- ในส่วนของตารางสินค้า -->
+        <table id="productTable" class="w-full">
+            <thead>
+            <tr class="bg-gray-200">
+                <th class="p-2">ชื่อสินค้า</th>
+                <th class="p-2">ราคา</th>
+                <th class="p-2">จำนวนคงเหลือ</th>
+                <th class="p-2">ประเภท</th>
+                <th class="p-2">ยอดขายทั้งหมด</th>
+                <th class="p-2">เพิ่มจำนวน</th>
+                <th class="p-2">ขายสินค้า</th>
+                <th class="p-2">ลบ</th> <!-- เพิ่มคอลัมน์ลบ -->
+            </tr>
+            </thead>
+            <tbody>
+            <!-- ข้อมูลสินค้าจะถูกเพิ่มที่นี่โดย JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- สินค้าใกล้หมด -->
+    <div class="bg-white p-6 rounded-lg shadow mb-8">
+      <h2 class="text-xl font-semibold mb-4">สินค้าใกล้หมด</h2>
+      <ul id="lowStockList">
+        <!-- ข้อมูลสินค้าใกล้หมดจะถูกเพิ่มที่นี่โดย JavaScript -->
+      </ul>
+    </div>
+
+    <!-- รายงานสินค้าขายดี -->
+    <div class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">รายงานสินค้าขายดี</h2>
+      <ul id="salesReport">
+        <!-- ข้อมูลสินค้าขายดีจะถูกเพิ่มที่นี่โดย JavaScript -->
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
